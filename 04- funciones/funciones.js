@@ -29,3 +29,15 @@ const areacirculo = function(radio) {
 console.log(areaCirculo(10));
 
 */
+
+
+// funciones autoejecutables
+
+/*
+sintaxis
+  
+(function (parametros) {
+    expresiones;
+})(argumentos);
+*/
+
