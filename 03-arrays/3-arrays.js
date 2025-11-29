@@ -15,8 +15,8 @@ const letras = Array.from("hola");
 // declaracion con array of
 const letras2 = Array.of(7)
 
-const numeros = Array.of(7)
-const numeros2 = Array.of(5,10,20)
+const numeros2 = Array.of(7)
+const numeros = Array.of(5,10,20)
 
 // recorrido de los arrays por los elementos
 
@@ -58,3 +58,47 @@ console.log(
     frutasExoticas.filter( f => f.endsWith("a"))
 );
 
+console.log(
+    frutasExoticas.filter(f => {
+        let cantVocales = 0;
+        for ( let letra of f ) {
+            switch (letra) {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+                ++cantVocales;
+                break;
+            }
+        }
+        return cantVocales > 3;
+    })
+);
+
+
+// foreach
+
+// ejecuta una funcion por cada elemento de array
+
+/* emaiils.foreach (e =>enviarEmail(e));
+for (let email of emails) {
+    enviarEmail(email);
+}*/
+
+
+frutasExoticas.forEach (f => console.log(f.toUpperCase()));
+
+// some
+// verifica si al menos un elemento cumple con la condición
+
+console.log(
+    frutasExoticas.some( f=> f.length > 5 )
+);
+
+// every
+// verifica si todos cumplen con la condicion
+
+console.log(
+    frutasExoticas.every( f=> f.length > 5 )
+);
