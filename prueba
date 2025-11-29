@@ -1,1 +1,0 @@
-secreto = String(prompt("ingrese la contraseña", "sintaxos"));

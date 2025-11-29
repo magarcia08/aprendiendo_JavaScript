@@ -52,3 +52,6 @@ console.log(numeros);
 
 console.log(frutasExoticas.map(fruta => fruta.toUpperCase()));
 
+// metodo filter 
+// crea un nuevo array con todos los elementos que cumplen una condicion 
+
