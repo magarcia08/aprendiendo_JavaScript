@@ -1,7 +1,7 @@
-## Aprendiendo JavaScript
+# Aprendiendo JavaScript
 
 
-# Este repositorio encontrarás los principios y conocimientos que debes tener de JavaScript
+## Este repositorio encontrarás los principios y conocimientos que debes tener de JavaScript
 
 De la siguiente manera:
 
