@@ -1,0 +1,19 @@
+<table border="1" width="75%">
+<tr>
+    <th> Nombres </th>
+    <th> Apellidos </th>
+    <th>Edades</th>
+    <th> Ocupaciones </th>
+    <th> Sexo</th>
+</tr>
+<tr>
+    <td> Diomedes</td>
+    <td> Diaz </td>
+    <td> 60 </td>
+    <td> Cantante </td>
+    <td align="center">
+        <img src="hombre.png" alt="hombre" style="width: 10%;">
+
+    </td>
+</tr>
+</table>

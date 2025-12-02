@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejemplo form data</title>
+    <style>
+
+        img {
+            width: 10%;
+        }
+    </style>
 </head>
 <body>
     <h1>ejemplo form data</h1>
@@ -12,49 +18,47 @@
     <form id="miform">
         <label for="nombre"> Nombre </label>
         <input type="text" name="nombre"
-        id="nombre">
+        id="nombre"> 
         <br>
         <br>
         <label for="apellido"> Apellido </label>
         <input type="text" name="apellido"
-        id="apellido">
+        id="apellido"> 
         <br>
         <br>
         <label for="edad"> Edad </label>
         <input type="text" name="edad"
-        id="edad">
+        id="edad"> 
         <br>
         <br>
         <label for="ocupacion"> Ocupacion </label>
         <input type="text" name="ocupacion"
-        id="ocupacion">
+        id="ocupacion"> 
 
         <br> <br>
         <label for="sexo"> Sexo </label>
         <br>
-        <label for="masculino"></label>
-        <input type="radio" name="sexo"
+        <label for="masculino">
+        <input type="radio" name="sexm"
         id = "sexm" value ="masculino">
-        Masculino
+        Masculino </label>
         <br> <br>
-        <label for="sexo"> Sexo </label>
-        <br>
-        <label for="femenino"></label>
-        <input type="radio" name="sexo"
+        <label for="femenino">
+        <input type="radio" name="sexf"
         id = "sexf" value ="femenino">
-        Femenino
+        Femenino </label>
         <br> <br>
-        <label for="sexo"> Sexo </label>
         <br>
-        <label for="otro"></label>
-        <input type="radio" name="sexo"
-        id = "sexo" value ="otro">
-        Otro
+        <label for="otro">
+        <input type="radio" name="sexot"
+        id = "sexot" value ="otro">
+        Otro  </label>
         <br> <br>
         <button type="button" onclick="enviarFormulario()"> Enviar </button>
         <hr>
-        <div id="resultado">
-            <table border="1" width="75%">
+          
+         <div id="resultado">
+            <table border="1" width="75%" id="tblCamper">
                 <tr>
                     <th> Nombres </th>
                     <th> Apellidos </th>
@@ -69,62 +73,62 @@
                     <td> Cantante </td>
                     <td align="center">
                         <img src="hombre.png" alt="hombre" style="width: 10%;">
-
+                
                     </td>
                 </tr>
-            </table>
+                </table>
+
         </div>
+
+        
     </form>
     <script>
+
         function enviarFormulario() {
-            const form = document.getElementById ("miform");
+            const form = document.getElementById("miform");
+            const resultado = document.getElementById("resultado");
             const datos = new FormData(form);
-            const resultado = document.getElementById('resultado');
+            const tblCamper = document.getElementById("tblcamper");
+
 
             for (let [key, value ] of datos.entries()) {
                 console.log(`${key} : ${value}`);
 
             } 
 
-            let tabla = encabezadoTabla();
+          //  let tabla = encabezadoTabla();
             tabla += cuerpoTabla(datos);
-            tabla += pieTabla();
+           //  tabla += pieTabla();
+
+            tblCamper.innerHTML = tabla;
+
         }
 
-        function encabezadoTabla() {
-            return `<table border "1" width "75%">
-               <tr>
-                    <th> Nombres </th>
-                    <th> Apellidos </th>
-                    <th>Edades</th>
-                    <th> Ocupaciones </th>
-                    <th> Sexo</th>
-                </tr>`; 
-        }
-
-        function pieTabla () {
-            return "</table>";
-            
-        } 
+    
 
         function cuerpoTabla(datos) {
             const nombre  = datos.get ('nombre');
             const apellido = datos.get ('apellido');
             const edad = datos.get ('edad');
             const ocupacion = datos.get ('ocupacion');
-            const sexo = datos.get ('sexo');
-        
+            const sexo = datos.get ('sexo').charAt(0).toUpperCase();
+            const img = (sexo == 'sexm' ) ? "hombre.png" : 
+            (sexo == 'sexf') ? "mujer.png " : "otro.png";
+
+    
             return ` <tr>
-                    <td> Diomedes</td>
-                    <td> Diaz </td>
-                    <td> 60 </td>
-                    <td> Cantante </td>
+                    <td> ${nombre}</td>
+                    <td> ${apellido} </td>
+                    <td> ${edad} </td>
+                    <td> ${ocupacion} </td>
                     <td align="center">
-                        <img src="hombre.png" alt="hombre" style="width: 10%;">
+                        <img src="${img}" alt="sexo" style="width: 10%;">
                     </td>
                 </tr>`;
 
         }
+
+
     </script>
 </body>
 </html>
