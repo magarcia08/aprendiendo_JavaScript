@@ -28,6 +28,51 @@
         <label for="ocupacion"> Ocupacion </label>
         <input type="text" name="ocupacion"
         id="ocupacion">
+
+        <br> <br>
+        <label for="sexo"> Sexo </label>
+        <br>
+        <label for="masculino"></label>
+        <input type="radio" name="sexo"
+        id = "sexm" value ="masculino">
+        Masculino
+        <br> <br>
+        <label for="sexo"> Sexo </label>
+        <br>
+        <label for="femenino"></label>
+        <input type="radio" name="sexo"
+        id = "sexf" value ="femenino">
+        Femenino
+        <br> <br>
+        <label for="sexo"> Sexo </label>
+        <br>
+        <label for="otro"></label>
+        <input type="radio" name="sexo"
+        id = "sexo" value ="otro">
+        Otro
+        <br> <br>
+        <button type="button" onclick="enviarFormulario()"> Enviar </button>
+        <hr>
+        <div id="resultado">
+            <table border="1" width="75%">
+                <tr>
+                    <th> Nombres </th>
+                    <th> Apellidos </th>
+                    <th>Ocupaciones</th>
+                    <th> Edades</th>
+                </tr>
+                <tr>
+                    <td> Diomedes</td>
+                    <td> Diaz </td>
+                    <td> 60 </td>
+                    <td> Cantante </td>
+                    <td align="center">
+                        <img src="hombre.png" alt="hombre" style="width: 20%;">
+
+                    </td>
+                </tr>
+            </table>
+        </div>
     </form>
 </body>
 </html>
