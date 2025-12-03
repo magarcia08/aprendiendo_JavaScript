@@ -1,7 +1,7 @@
 // calculadora dinamicaa
 
 function calcular(precio, cantidad, funCallBack) {
-    console.log(`calculando ${cantidad} productos de $${precio.toLocaleString('es-CO')}`);
+    console.log(`\n calculando ${cantidad} productos de $${precio.toLocaleString('es-CO')}`);
     funCallBack(precio, cantidad);
 }
 
@@ -15,5 +15,11 @@ const conDescuento = (precio,cant) => {
     console.log(`Total con 15% descuento: $${total.toLocaleString('es-CO')}`);
 }
 
+const conBlackFriday = (precio,cant) => {
+    const total = precio * cant * 0.60;
+    console.log(`Total con 15% descuento: $${total.toLocaleString('es-CO')}`);
+}
+
 calcular(45000, 3 , conIVA);
 calcular(45000, 3 , conDescuento);
+calcular(45000, 3 , conBlackFriday);
