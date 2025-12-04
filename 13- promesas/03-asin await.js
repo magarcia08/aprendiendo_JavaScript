@@ -4,9 +4,9 @@ const imagenDisplay = document.getElementById("imgpokemon");
 
 
 async function consultar(event) {
-    /*if (event) event.preventDefault();
-    nombreDisplay.textContent = "";
-    imagenDisplay.innerHTML = "";*/
+    // if (event) event.preventDefault();
+    nombreDisplay.textContent = '<img src="" alt=""">';
+    imagenDisplay.innerHTML = "";
     const nomPoke = inputNombre.value.
     toLowerCase().trim();
     const url = `https://pokeapi.co/api/v2/pokemon/${nomPoke}`;
@@ -29,7 +29,7 @@ try {
         imagenDisplay.innerHTML = `<img src=${rutaImg} alt="${datos.name}">`;
         
     } catch(error) {
-        nombreDisplay.textContent = error.message + "..estamos trabajando para mejorar su servicio...arguments.";
+        nombreDisplay.textContent = error.message + "..estamos trabajando para mejorar su servicio...";
     }
 
 
