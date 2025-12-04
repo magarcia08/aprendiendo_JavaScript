@@ -3,9 +3,10 @@ const nombreDisplay = document.getElementById("nombrepokemon");
 const imagenDisplay = document.getElementById("imgpokemon");
 
 
-function consultar() {
+function consultar(event) {
+    /*if (event) event.preventDefault();
     nombreDisplay.textContent = "";
-    imagenDisplay.innerHTML = "";
+    imagenDisplay.innerHTML = "";*/
     const nomPoke = inputNombre.value.
     toLowerCase().trim();
     const url = `https://pokeapi.co/api/v2/pokemon/${nomPoke}`;
@@ -17,14 +18,21 @@ function consultar() {
         .then(respuesta => {
             if (!respuesta.ok) {
                 throw new Error (`Error. POkemon  ${nomPoke} no encontrado`);
+                
             }
             return respuesta.json();
         })
         .then (datos => {
             nombreDisplay.textContent = datos.name[0].toUpperCase () 
             + datos.name.slice(1);
+            const rutaImg = datos.sprites.front_default;
+            imagenDisplay.innerHTML = `<img src=${rutaImg} alt="${datos.name}">`;
             
         }) 
+
+        .catch(error   => {
+            nombreDisplay.textContent = error.message;
+        })
 }
 
 
