@@ -14,4 +14,8 @@ console.log("Nombre del nodo: ", elemMensaje.nodeName);
 
 // 4. outerText
 // el contenido del nodo
-console.log("Contenido del nodo\n", elemMensaje.outerHTML);
+console.log("Contenido del nodo:\n", elemMensaje.outerText);
+console.log(
+    "Contenido del container:\n",
+    docustomElements.querySelector(".container").outerHTML
+);
